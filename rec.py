@@ -16,11 +16,11 @@ vectorizer=TfidfVectorizer()
 feature_vector=vectorizer.fit_transform(combined_features)
 #getting the similarity constant score
 similarity=cosine_similarity(feature_vector)
+mob=[]
 
-movies=[]
 def recomended_movies(title):
     movie_name=title
-    
+    movies=[]
     #Creating the list of movies in the dataset
     list_movies=data['title'].tolist()
     #finding the close match for the movie name given by the user.
@@ -39,8 +39,8 @@ def recomended_movies(title):
             #print(i,' .',title_from_index)
             movies.append(title_from_index)
             i+=1
-    
-    return movies
+    mob=movies
+    return mob
     
  
  
